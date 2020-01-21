@@ -14,7 +14,6 @@ public class DialogActivity extends ParentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
         mRevealAnimation = new RevealAnimation(ApplicationUtil.getRootView(this), getIntent().getBundleExtra(Params.BUNDLE_PAGE), this);
-
         addFragment();
     }
 

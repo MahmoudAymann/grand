@@ -1,13 +1,7 @@
 package grand.grandlib;
 
 import android.app.Application;
-
-import androidx.databinding.DataBindingUtil;
-
-
 import org.jetbrains.annotations.NotNull;
-
-import grand.grandlib.databinding.AppDataBindingComponent;
 import timber.log.Timber;
 
 public class BaseApplication extends Application {
@@ -19,7 +13,7 @@ public class BaseApplication extends Application {
         super.onCreate();
         mInstance = this;
         initTimber();
-        DataBindingUtil.setDefaultComponent(new AppDataBindingComponent());
+//        DataBindingUtil.setDefaultComponent(new AppDataBindingComponent());
 //        ApplicationUtil.requestNewToken();
     }
 

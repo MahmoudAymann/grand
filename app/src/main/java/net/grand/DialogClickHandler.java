@@ -22,7 +22,6 @@ public class DialogClickHandler {
     }
 
     public void onWhatsAppClick(){
-        whatsAppMsg(homeActivity,  homeActivity.getString(R.string.grand_phone));
     }
 
     public static void makeCall(Activity context, String phone) {

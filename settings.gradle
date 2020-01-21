@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':grandlib'
 rootProject.name='Grand'

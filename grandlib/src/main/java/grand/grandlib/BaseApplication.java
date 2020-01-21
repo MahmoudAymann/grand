@@ -13,8 +13,6 @@ public class BaseApplication extends Application {
         super.onCreate();
         mInstance = this;
         initTimber();
-//        DataBindingUtil.setDefaultComponent(new AppDataBindingComponent());
-//        ApplicationUtil.requestNewToken();
     }
 
     public static synchronized BaseApplication getInstance() {

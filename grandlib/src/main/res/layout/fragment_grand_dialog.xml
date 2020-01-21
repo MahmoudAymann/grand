@@ -1,193 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".view.ui.fragment.dialogs.GrandDialogFragment">
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ll_root"
+
+    <View
+        android:id="@+id/view1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/cv_root"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/view1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@android:color/transparent"
-            android:onClick="@{()->clickHandler.onOuterViewClick()}"
-            app:layout_constraintBottom_toTopOf="@id/cv_root"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16w"
+        android:layout_marginEnd="@dimen/dp16w"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_root"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp16w"
-            android:layout_marginEnd="@dimen/dp16w"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:gravity="center"
+            android:padding="4dp">
 
             <RelativeLayout
+                android:id="@+id/rl_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="4dp">
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/dp8w"
+                android:layout_marginTop="@dimen/dp8h"
+                android:layout_marginEnd="@dimen/dp8w"
+                android:orientation="vertical">
 
-                <RelativeLayout
-                    android:id="@+id/rl_header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="false"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="@dimen/dp8w"
-                    android:layout_marginTop="@dimen/dp8h"
-                    android:layout_marginEnd="@dimen/dp8w"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/btn_close"
-                        style="@style/MyFabColorStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:elevation="0dp"
-                        android:onClick="@{()->clickHandler.onOuterViewClick()}"
-                        android:src="@drawable/ic_close"
-                        app:backgroundTint="@color/grand_logo_color"
-                        app:fabSize="mini"
-                        app:maxImageSize="20dp" />
-
-
-                    <TextView
-                        android:id="@+id/tv_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="@dimen/dp8h"
-                        android:layout_marginBottom="@dimen/dp8h"
-                        android:text="@string/programming_and_design"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
-
-                <ImageView
-                    android:id="@+id/logo"
-                    android:layout_width="@dimen/dp80w"
-                    android:layout_height="@dimen/dp80h"
-                    android:layout_below="@id/rl_header"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/grand_logo"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:id="@+id/tv_site"
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_close"
+                    style="@style/MyFabColorStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/logo"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/dp8h"
-                    android:text="@string/grand_site"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                    android:textStyle="bold" />
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:elevation="0dp"
+                    android:src="@drawable/ic_close"
+                    app:backgroundTint="@color/grand_logo_color"
+                    app:fabSize="mini"
+                    app:maxImageSize="20dp" />
 
 
                 <TextView
-                    android:id="@+id/tv_grand_phone"
+                    android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_site"
-                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
                     android:layout_marginTop="@dimen/dp8h"
                     android:layout_marginBottom="@dimen/dp8h"
-                    android:text="@string/grand_phone"
+                    android:text="@string/programming_and_design"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                     android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_grand_phone"
-                    android:layout_centerHorizontal="true"
-                    android:baselineAligned="false">
-
-                    <FrameLayout
-                        android:id="@+id/btn_whatsapp"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp8w"
-                        android:layout_marginEnd="@dimen/dp8w"
-                        android:layout_weight="1"
-                        android:background="?selectableItemBackground"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:paddingTop="@dimen/dp4h"
-                        android:paddingBottom="@dimen/dp4h">
-
-                        <TextView
-                            android:id="@+id/tv_whatsapp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/ripple_btn_bg"
-                            android:drawableStart="@drawable/ic_whatsapp_border"
-                            android:onClick="@{()->clickHandler.onWhatsAppClick()}"
-                            android:padding="8dp"
-                            android:text="@string/whatsapp"
-                            android:textAlignment="center"
-                            android:textAllCaps="true"
-                            android:textColor="@android:color/white"
-                            android:textStyle="bold" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:id="@+id/btn_call"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp8w"
-                        android:layout_marginEnd="@dimen/dp8w"
-                        android:layout_weight="1"
-                        android:background="?selectableItemBackground"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:paddingTop="@dimen/dp4h"
-                        android:paddingBottom="@dimen/dp4h">
-
-                        <TextView
-                            android:id="@+id/tv_call"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/ripple_btn_bg"
-                            android:drawableStart="@drawable/ic_phone_call"
-                            android:onClick="@{()->clickHandler.onCallClcik()}"
-                            android:padding="8dp"
-                            android:text="@string/call"
-                            android:textAlignment="center"
-                            android:textAllCaps="true"
-                            android:textColor="@android:color/white"
-                            android:textStyle="bold" />
-                    </FrameLayout>
-                </LinearLayout>
             </RelativeLayout>
-        </com.google.android.material.card.MaterialCardView>
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@android:color/transparent"
-            android:onClick="@{()->clickHandler.onOuterViewClick()}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cv_root" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/dp80w"
+                android:layout_height="@dimen/dp80h"
+                android:layout_below="@id/rl_header"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/grand_logo"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp8h"
+                android:text="@string/grand_site"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tv_grand_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_site"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp8h"
+                android:layout_marginBottom="@dimen/dp8h"
+                android:text="@string/grand_phone"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_grand_phone"
+                android:layout_centerHorizontal="true"
+                android:baselineAligned="false">
+
+                <FrameLayout
+                    android:id="@+id/btn_whatsapp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp8w"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="@dimen/dp4h"
+                    android:paddingBottom="@dimen/dp4h">
+
+                    <TextView
+                        android:id="@+id/tv_whatsapp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ripple_btn_bg"
+                        android:drawableStart="@drawable/ic_whatsapp_border"
+                        android:padding="8dp"
+                        android:text="@string/whatsapp"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/btn_call"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp8w"
+                    android:layout_marginEnd="@dimen/dp8w"
+                    android:layout_weight="1"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="@dimen/dp4h"
+                    android:paddingBottom="@dimen/dp4h">
+
+                    <TextView
+                        android:id="@+id/tv_call"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ripple_btn_bg"
+                        android:drawableStart="@drawable/ic_phone_call"
+                        android:padding="8dp"
+                        android:text="@string/call"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_root" />
+</androidx.constraintlayout.widget.ConstraintLayout>

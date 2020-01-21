@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Grand</string>
-    <string name="programming_and_design">Programming and Design</string>
-    <string name="grand_site" translatable="false">www.2grand.net</string>
-    <string name="grand_phone" translatable="false">+0201157771069</string>
-    <string name="call">call</string>
-    <string name="whatsapp">whatsapp</string>
-</resources>

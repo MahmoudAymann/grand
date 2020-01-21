@@ -16,7 +16,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
         <activity android:name=".ParentActivity" />
         <activity
-        android:name=".DialogActivity"
+        android:name=".HomeActivity"
         android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

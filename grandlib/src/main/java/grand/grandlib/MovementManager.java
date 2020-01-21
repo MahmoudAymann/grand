@@ -1,4 +1,4 @@
-package net.grand;
+package grand.grandlib;
 
 
 import android.app.Activity;
@@ -11,8 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import net.grand.constantsutils.Codes;
-import net.grand.constantsutils.Params;
+
+import net.grand.R;
+
+import grand.grandlib.constantsutils.Codes;
+import grand.grandlib.constantsutils.Params;
 import timber.log.Timber;
 
 
@@ -119,7 +122,7 @@ public abstract class MovementManager {
 
 
     public static void startDialogActivity(FragmentActivity context, int page, Bundle bundle) {
-        Intent intent = new Intent(context, HomeActivity.class);
+        Intent intent = new Intent(context, DialogActivity.class);
         intent.putExtra(Params.INTENT_PAGE, page);
         intent.putExtra(Params.BUNDLE_PAGE, bundle);
         context.startActivityForResult(intent, Codes.DIALOG_REQUEST_CODE);

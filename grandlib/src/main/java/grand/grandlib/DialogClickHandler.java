@@ -1,4 +1,4 @@
-package net.grand;
+package grand.grandlib;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,22 +7,24 @@ import android.widget.Toast;
 
 import androidx.fragment.app.FragmentActivity;
 
+import net.grand.R;
+
 public class DialogClickHandler {
-    private HomeActivity homeActivity;
+    private DialogActivity dialogActivity;
     public DialogClickHandler(FragmentActivity activity) {
-        this.homeActivity = (HomeActivity) activity;
+        this.dialogActivity = (DialogActivity) activity;
     }
 
     public void onOuterViewClick(){
-           homeActivity.finish();
+           dialogActivity.finish();
     }
 
     public void onCallClcik(){
-        makeCall(homeActivity, homeActivity.getString(R.string.grand_phone));
+        makeCall(dialogActivity, dialogActivity.getString(R.string.grand_phone));
     }
 
     public void onWhatsAppClick(){
-        whatsAppMsg(homeActivity,  homeActivity.getString(R.string.grand_phone));
+        whatsAppMsg(dialogActivity,  dialogActivity.getString(R.string.grand_phone));
     }
 
     public static void makeCall(Activity context, String phone) {

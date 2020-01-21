@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grand</string>
+    <string name="programming_and_design">البرمجة والتصميم</string>
+    <string name="call">مكالمه</string>
+    <string name="whatsapp">واتساب</string>
+    <string name="exit">خروج</string>
+</resources>

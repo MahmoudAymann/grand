@@ -4,16 +4,11 @@
     package="net.grand">
 
     <dist:module dist:instant="true" />
+
     <application>
         <activity android:name="grand.grandlib.ParentActivity" />
-        <activity
-            android:name="grand.grandlib.DialogActivity"
+        <activity android:name="grand.grandlib.DialogActivity"
             android:theme="@style/Theme.Transparent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>

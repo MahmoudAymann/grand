@@ -5,4 +5,5 @@
     <string name="grand_phone" translatable="false">+0201157771069</string>
     <string name="call">call</string>
     <string name="whatsapp">whatsapp</string>
+    <string name="image_saved">Image saved</string>
 </resources>
